@@ -3,36 +3,21 @@
 .rating-bad {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 600;
+  gap: 0.4rem;
 
-  &::before {
-    font-size: 2rem;
-    line-height: 1;
+  i {
+    color: gold;
   }
 }
 
 .rating-good {
-  color: #198754;
-
-  &::before {
-    content: "🤩";
-  }
+  color: #4ade80;
 }
 
 .rating-ok {
-  color: #ffc107;
-
-  &::before {
-    content: "🙂";
-  }
+  color: #facc15;
 }
 
 .rating-bad {
-  color: #dc3545;
-
-  &::before {
-    content: "💩";
-  }
+  color: #f87171;
 }

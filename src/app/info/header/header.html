@@ -1,8 +1,16 @@
-<div>
-    <div class="superposition-simple">
-        @if (movie.image) {
-            <img decoding="async" class="image-film" [src]="'http://localhost:8080/movies/' + movie.id + '/image'">
-        }
-        <div class="titre-film"> {{movie.title}} </div>
-    </div>
+<div class="row align-items-center mb-5 pt-4">
+  <div class="col-8 col-md-4 col-lg-3 mx-auto mb-4 mb-md-0">
+    @if (movie.image) {
+      <img
+        [src]="'http://localhost:8080/movies/' + movie.id + '/image'"
+        class="img-fluid rounded-4 shadow-lg hero-poster"
+        [alt]="movie.title"
+      />
+    }
+  </div>
+
+  <div class="col-12 col-md-8 col-lg-9 text-center text-md-start px-md-4">
+    <span class="badge bg-info mb-3 px-3 py-2 rounded-pill tracking-wider">DÉTAILS DU FILM</span>
+    <h1 class="display-3 fw-bolder text-white mb-3 text-uppercase">{{ movie.title }}</h1>
+  </div>
 </div>

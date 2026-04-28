@@ -1,0 +1,20 @@
+.director {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.director-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.director-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+}

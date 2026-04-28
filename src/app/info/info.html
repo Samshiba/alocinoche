@@ -1,0 +1,42 @@
+<div>
+    @if (movie$ | async; as movie) {
+        <app-info-header [movie]="movie"></app-info-header>
+        <div class="meta">
+        @if (movie.rate) {
+            <div class="meta-item">
+                <app-info-rating [rating]="movie.rate"></app-info-rating>
+            </div>
+        }
+
+        @if (movie.rate && movie.releaseDate) {
+            <span class="separator"></span>
+        }
+
+        @if (movie.releaseDate) {
+            <div class="meta-item">
+                <app-info-date [date]="movie.releaseDate"></app-info-date>
+            </div>
+        }
+
+        @if (movie.releaseDate && movie.director) {
+            <span class="separator"></span>
+        }
+
+        @if (movie.director) {
+            <div class="meta-item">
+                <app-info-director [director]="movie.director"></app-info-director>
+            </div>
+        }
+        </div>
+
+        <div class="synopsis">
+            <h6>Synopsis:</h6>
+            <p>{{movie.synopsis}}</p>
+        </div>
+
+        @if (movie.id) {
+            <app-info-comments [movieId]="movie.id"></app-info-comments>
+        }
+    }
+
+</div>

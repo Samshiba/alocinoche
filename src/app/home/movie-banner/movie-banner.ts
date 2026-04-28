@@ -1,5 +1,6 @@
-import {Component, Input} from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
 import {Movie} from '../../models/movie';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-banner',
@@ -9,4 +10,10 @@ import {Movie} from '../../models/movie';
 })
 export class MovieBanner {
   @Input({required : true}) movie! : Movie
+
+  private router = inject(Router)
+
+  goToMovie() {
+    this.router.navigate(['/movies', this.movie.id]);
+  }
 }

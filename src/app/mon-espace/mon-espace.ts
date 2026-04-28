@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { DatePipe } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { UserApi } from '../services/user-api';
 import { ReviewsApi } from '../services/reviews-api';
@@ -10,7 +11,7 @@ import { Review } from '../models/review';
 @Component({
   selector: 'app-mon-espace',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, DatePipe],
   templateUrl: './mon-espace.html',
   styleUrl: './mon-espace.scss'
 })

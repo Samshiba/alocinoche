@@ -4,8 +4,13 @@ import { User } from './user';
 export interface Review {
   id?: number;
   user: User;
-  movie?: Movie;
+  movie: Movie;
   rate: number;
   text: string;
-  reviewDate: Date;
+  reviewDate?: string;
+}
+
+export interface CheckReviewDTO {
+  userId: number;
+  filmId: number;
 }

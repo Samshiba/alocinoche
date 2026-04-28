@@ -3,7 +3,6 @@ import {Movie} from '../models/movie';
 import {FormsModule} from '@angular/forms';
 import {MoviesApi} from '../services/movies-api';
 import {Router} from '@angular/router';
-import { provideAnimations } from '@angular/platform-browser/animations';
 import {ToastrService} from 'ngx-toastr';
 
 @Component({

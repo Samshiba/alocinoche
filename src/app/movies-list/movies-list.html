@@ -1,0 +1,42 @@
+<h4 class="justify-center">Gérer les films affichés</h4>
+<div class="add-container">
+  <button type="button" class="btn btn-dark" routerLink="/add-movie">Nouveau film</button>
+</div>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Date</th>
+      <th scope="col">Réalisateur</th>
+      <th scope="col">Note</th>
+      <th scope="col">Synopsis</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (movie of movies; track movie.id) {
+        <tr>
+          <td>{{movie.id}}</td>
+          <td>{{movie.title}}</td>
+          <td>{{movie.releaseDate | date:'dd/MM/yy'}}</td>
+          <td>{{movie.director}}</td>
+          <td>{{movie.rate}}</td>
+          <td class="synopsis">{{movie.synopsis}}</td>
+          <td>
+            <div class="actions-container">
+              <button type="button" class="btn btn-danger deleteButton" (click)="deleteMovie(movie.id!)">
+                <i class="bi bi-trash"></i>
+              </button>
+              <button type="button" class="btn btn-primary" [routerLink]="['/update-movie']" [queryParams]="{id: movie.id}">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+

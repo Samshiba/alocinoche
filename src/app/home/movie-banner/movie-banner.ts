@@ -9,10 +9,4 @@ import {Movie} from '../../models/movie';
 })
 export class MovieBanner {
   @Input({required : true}) movie! : Movie
-
-  isOvered = false;
-
-  toggleOvered() {
-    this.isOvered = !this.isOvered;
-  }
 }

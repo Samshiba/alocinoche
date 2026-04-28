@@ -1,4 +1,4 @@
-# TakimaCiné
+# AloCinoche
 
 ## Development server
 

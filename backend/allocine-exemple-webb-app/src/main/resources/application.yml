@@ -8,3 +8,9 @@ spring:
     multipart:
       max-file-size: 1MB
       max-request-size: 1MB
+
+springdoc:
+  swagger-ui:
+    enabled: true
+  api-docs:
+    enabled: true

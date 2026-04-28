@@ -1,9 +1,12 @@
 <div class="movie-card card m-3" (click)="goToMovie(movie.id!)">
-  @if(movie.image) {
-    <img [src]="'http://localhost:8080/movies/' + movie.id + '/image'" class="card-img-top" alt="">
+  @if (movie.image) {
+    <img
+      [src]="'http://localhost:8080/movies/' + movie.id + '/image'"
+      class="card-img-top"
+      alt=""
+    />
   }
   <div class="card-body p-2">
-
     <h5 class="movie-title">
       {{ movie.title }}
     </h5>
@@ -15,9 +18,8 @@
       </span>
 
       <span class="year">
-        {{ movie.releaseDate | date:'yyyy' }}
+        {{ movie.releaseDate | date: 'yyyy' }}
       </span>
     </div>
-
   </div>
 </div>

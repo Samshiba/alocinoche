@@ -1,3 +1,26 @@
-@for (movie of movies$ | async; track movie.id) {
-  <app-movie-card [movie]="movie"></app-movie-card>
-}
+<div class="hero-showcase">
+  @if (randomMovie$ | async; as dailyMovie) {
+    @if (dailyMovie.image) {
+      <div
+        class="hero-bg-blur"
+        [style.backgroundImage]="'url(http://localhost:8080/movies/' + dailyMovie.id + '/image)'"
+      ></div>
+    }
+
+    <div class="container hero-content py-5">
+      <app-movie-banner [movie]="dailyMovie"></app-movie-banner>
+
+      @if (topthreeMovies$ | async; as topMovies) {
+        <app-movie-top [movies]="topMovies"></app-movie-top>
+      }
+    </div>
+  }
+
+  <div class="hero-bottom-fade"></div>
+</div>
+
+<div class="movies-container">
+  @for (movie of movies$ | async; track movie.id) {
+    <app-movie-card [movie]="movie"></app-movie-card>
+  }
+</div>

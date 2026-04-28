@@ -5,6 +5,7 @@ import {AddMovie} from './add-movie/add-movie';
 import {UpdateMovie} from './update-movie/update-movie';
 
 import { NotFound } from './not-found/not-found';
+import { MovieInfo } from './info/info';
 
 export const routes: Routes = [
   { path: '', component: Home},
@@ -13,6 +14,6 @@ export const routes: Routes = [
   { path: 'admin', component: MoviesList},
   { path: 'admin/add', component: AddMovie},
   { path: 'admin/update', component: UpdateMovie},
-  { path: '**', component: NotFound},
-  { path: 'movies/:id', component: MovieInfo, data: { preload: true }}
+  { path: 'movies/:id', component: MovieInfo, data: { preload: true }},
+  { path: '**', component: NotFound}
 ];

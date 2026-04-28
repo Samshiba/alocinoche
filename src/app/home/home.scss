@@ -1,5 +1,10 @@
 :host {
+  display: block;
+}
+
+.movies-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
 }

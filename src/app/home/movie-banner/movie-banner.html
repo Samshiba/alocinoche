@@ -1,0 +1,36 @@
+<div class="showcase-wrapper mx-auto">
+  <h1 class="text-center mb-4 showcase-title">🎬 Film du jour</h1>
+
+  <div class="banner shadow-sm" (mouseenter)="toggleOvered()" (mouseleave)="toggleOvered()">
+    @if (movie.image) {
+      <img
+        [src]="'http://localhost:8080/movies/' + movie.id + '/image'"
+        class="banner-img"
+        alt="{{ movie.title }}"
+      />
+    }
+
+    <div class="banner-header p-3 d-flex justify-content-between align-items-start">
+      <h2 class="banner-title text-white m-0 pe-2">{{ movie.title }}</h2>
+
+      @if (isOvered) {
+        <div class="d-flex flex-column align-items-end text-end mt-1">
+          @if (movie.rate) {
+            <span class="badge bg-warning text-dark fs-6 shadow-sm mb-1">
+              ⭐ {{ movie.rate }} / 10
+            </span>
+          }
+          @if (movie.director) {
+            <span class="text-light small fw-bold">{{ movie.director }}</span>
+          }
+        </div>
+      }
+    </div>
+
+    @if (isOvered) {
+      <div class="banner-content p-3">
+        <p class="banner-text text-white m-0">{{ movie.synopsis }}</p>
+      </div>
+    }
+  </div>
+</div>

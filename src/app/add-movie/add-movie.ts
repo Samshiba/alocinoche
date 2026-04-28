@@ -3,6 +3,8 @@ import {Movie} from '../models/movie';
 import {FormsModule} from '@angular/forms';
 import {MoviesApi} from '../services/movies-api';
 import {Router} from '@angular/router';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-movie',
@@ -13,6 +15,7 @@ import {Router} from '@angular/router';
   styleUrl: './add-movie.scss',
 })
 export class AddMovie {
+
   private readonly moviesApi = inject(MoviesApi)
   private router = inject(Router)
 
@@ -26,9 +29,16 @@ export class AddMovie {
     image: undefined
   }
 
+  constructor(private toastrService: ToastrService) {}
+
   addMovie(): void {
-    this.moviesApi.addMovie(this.movie).subscribe(
-      () => this.router.navigate(['/movies'])
-    );
+    this.moviesApi.addMovie(this.movie).subscribe(() => {
+      this.toastrService.success('Film ajouté');
+      this.router.navigate(['/movies']);
+    });
   }
+
+
+
+
 }

@@ -4,6 +4,7 @@ import {MoviesApi} from '../services/movies-api';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Movie} from '../models/movie';
 import {DatePipe} from '@angular/common';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-update-movie',
@@ -23,7 +24,7 @@ export class UpdateMovie {
   originalTitle = '';
   releaseDate = '';
 
-  constructor() {
+  constructor(private toastrService: ToastrService) {
     if (!this.id || isNaN(this.id)) {
       this.router.navigate(['/movies']);
       return;
@@ -41,6 +42,7 @@ export class UpdateMovie {
       ...this.movie,
       releaseDate: new Date(this.releaseDate)
     }).subscribe(() => {
+      this.toastrService.success('Film modifié');
       this.router.navigate(['/movies']);
     });
   }

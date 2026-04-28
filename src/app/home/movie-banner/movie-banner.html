@@ -14,14 +14,10 @@
     <h1 class="display-3 fw-bolder text-white mb-3 text-uppercase">{{ movie.title }}</h1>
 
     <div class="d-flex justify-content-center justify-content-md-start gap-4 mb-4 text-light">
-      @if (movie.rate) {
-        <span class="fs-5 fw-bold text-warning"
-          ><i class="bi bi-star-fill"></i> {{ movie.rate }} / 10</span
-        >
-      }
-      @if (movie.director) {
-        <span class="fs-5"><i class="bi bi-camera-reels-fill"></i> {{ movie.director }}</span>
-      }
+      <span class="fs-5 fw-bold text-warning"
+        ><i class="bi bi-star-fill"></i> {{ movie.rate }} / 10</span
+      >
+      <span class="fs-5"><i class="bi bi-camera-reels-fill"></i> {{ movie.director }}</span>
     </div>
 
     <p class="lead text-white-50 mb-5 hero-synopsis">
@@ -29,7 +25,7 @@
     </p>
 
     <div class="d-flex justify-content-center justify-content-md-start gap-3">
-      <button class="btn btn-outline-light btn-lg rounded-pill px-4 fw-bold" (click)="goToMovie()">
+      <button class="btn btn-accent btn-lg rounded-pill px-4 fw-bold" (click)="goToMovie()">
         Détails
       </button>
     </div>

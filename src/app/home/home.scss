@@ -9,9 +9,11 @@
   gap: 20px;
 }
 
+@import '../../styles/variables.scss';
+
 .hero-showcase {
   position: relative;
-  background-color: #0f1014;
+  background-color: $primary-color;
   overflow: hidden;
 }
 

@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .movie-card {
   width: 180px;
   height: 100%;
@@ -12,7 +14,7 @@
 .movie-card:hover {
   transform: scale(1.05) translateY(-3px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  border-color: #dee2e6;
+  border-color: $accent-color;
 }
 
 .movies-container {
@@ -43,12 +45,12 @@
   display: flex;
   justify-content: space-between;
   font-size: 0.8rem;
-  color: #6c757d;
+  color: $text-dark;
 }
 
 .rating {
   font-weight: 600;
-  color: #212529;
+  color: $primary-color;
 }
 
 .rating i {

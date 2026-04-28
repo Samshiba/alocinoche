@@ -1,5 +1,22 @@
+@import '../../../styles/variables.scss';
+
 .tracking-wider {
   letter-spacing: 2px;
+}
+
+.rank-badge-first {
+  background-color: $accent-color;
+  color: white;
+}
+
+.rank-badge-second {
+  background-color: $secondary-color;
+  color: white;
+}
+
+.rank-badge-third {
+  background-color: darken($secondary-color, 10%);
+  color: white;
 }
 
 .podium-container {
@@ -41,10 +58,7 @@
   margin-bottom: -18px;
   z-index: 5;
   font-size: 1.1rem;
-}
-
-.bronze-badge {
-  background-color: #cd7f32; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* RESPONSIVE MOBILE */

@@ -1,0 +1,26 @@
+<h4 class="register-title">Rejoindre TakimaCiné</h4>
+
+<div class="form d-flex flex-column w-50">
+    <form #registerForm="ngForm" novalidate>
+        <label for="firstName">Prénom</label>
+        <input id="firstName" name="firstName" type="text" [(ngModel)]="user.firstName" #firstName="ngModel" required
+            minlength="2" placeholder="Jean" autocomplete="given-name" class="form-control"/>
+
+        <label for="lastName">Nom</label>
+        <input id="lastName" name="lastName" type="text" [(ngModel)]="user.lastName" #lastName="ngModel" required
+            minlength="2" placeholder="Dupont" autocomplete="family-name" class="form-control"/>
+
+        <label for="age">Âge</label>
+        <input id="age" name="age" type="number" class="form-control" [(ngModel)]="user.age" #age="ngModel" required
+            min="13" max="120" placeholder="25" autocomplete="off" class="form-control"/>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" class="form-control" [(ngModel)]="user.email" #email="ngModel"
+            required email placeholder="jean.dupont@email.com" autocomplete="email" (blur)="onEmailBlur()" class="form-control"/>
+
+        <button type="submit" class="btn btn-primary" (click)="register()" [disabled]="registerForm.invalid || isLoading">
+            <span>{{ isLoading ? 'Création en cours...' : 'Créer mon compte' }}</span>
+        </button>
+
+    </form>
+</div>

@@ -1,0 +1,94 @@
+@import '../../styles/variables.scss';
+
+nav.navbar {
+	background-color: $primary-color !important;
+	padding: 1rem 2.5rem !important;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	border-bottom: 2px solid $accent-color;
+
+	.navbar-brand {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: $text-light !important;
+		margin-right: 3rem;
+		letter-spacing: 0.5px;
+		transition: $transition;
+
+		&:hover {
+			color: $accent-color !important;
+		}
+	}
+
+	.nav-item {
+		color: $text-light !important;
+		font-weight: 500;
+		font-size: 1rem;
+		transition: $transition;
+		position: relative;
+		margin-left: 2.5rem;
+
+		&:first-of-type {
+			margin-left: 0;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background-color: $accent-color;
+			transition: width 0.3s ease;
+		}
+
+		&:hover {
+			color: $accent-color !important;
+
+			&:after {
+				width: 100%;
+			}
+		}
+
+		&.active {
+			color: $accent-color !important;
+
+			&:after {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	nav.navbar {
+		padding: 1rem 1rem !important;
+		flex-direction: column;
+
+		.navbar-brand {
+			margin-right: 0;
+			margin-bottom: 1rem;
+			font-size: 1.3rem;
+		}
+
+		.nav-item {
+			padding: 0.5rem 0;
+			margin-left: 1rem !important;
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	nav.navbar {
+		padding: 0.75rem !important;
+
+		.navbar-brand {
+			font-size: 1.1rem;
+		}
+
+		.nav-item {
+			font-size: 0.9rem;
+			margin-left: 0.5rem !important;
+		}
+	}
+}

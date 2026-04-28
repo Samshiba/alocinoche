@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserApi } from '../services/user-api';
+import { AuthService } from '../services/auth.service';
 import { User } from '../models/user';
 import { FormsModule } from '@angular/forms';
 
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 export class Inscription {
 
   private readonly userApi = inject(UserApi);
+  private readonly authService = inject(AuthService);
   private readonly router = inject(Router);
   private readonly toastr = inject(ToastrService);
 
@@ -39,9 +41,11 @@ export class Inscription {
     this.isLoading = true;
     this.userApi.createUser(this.user).subscribe({
       next: (created) => {
-        localStorage.setItem('userId', String(created.id));
-        this.toastr.success('Compte créé avec succès !');
-        this.router.navigate(['/']);
+        if (created.id) {
+          this.authService.login(created.id);
+          this.toastr.success('Compte créé avec succès !');
+          this.router.navigate(['/']);
+        }
       },
       error: () => {
         this.isLoading = false;

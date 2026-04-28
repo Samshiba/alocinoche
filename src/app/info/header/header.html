@@ -1,0 +1,8 @@
+<div>
+    <div class="superposition-simple">
+        @if (movie.image) {
+            <img decoding="async" class="image-film" [src]="'http://localhost:8080/movies/' + movie.id + '/image'">
+        }
+        <div class="titre-film"> {{movie.title}} </div>
+    </div>
+</div>

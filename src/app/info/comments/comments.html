@@ -1,0 +1,21 @@
+<div class="comments-card">
+    <h6>Reviews</h6>
+    @if (reviews$ | async; as reviews) {
+        @if (reviews.length === 0) {
+            <p class="empty">Aucune reviews pour ce film.</p>
+        } @else {
+            <ul class="review-list">
+                @for (review of reviews; track review.id) {
+                    <li class="review">
+                        <div class="review-header">
+                            <span class="author">{{ review.user.firstName }} {{ review.user.lastName }}</span>
+                            <span class="rate">{{ review.rate }}/5</span>
+                            <span class="date">{{ review.reviewDate | date:'dd/MM/yyyy' }}</span>
+                        </div>
+                        <p class="review-text">{{ review.text }}</p>
+                    </li>
+                }
+            </ul>
+        }
+    }
+</div>

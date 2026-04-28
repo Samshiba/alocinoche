@@ -29,4 +29,14 @@ export class MoviesApi {
   updateMovie(movie: Movie) {
     return this.httpClient.put<Movie>(`${this.url}/${movie.id}`, movie)
   }
+
+  getMovieImage(id: number): Observable<Blob> {
+    return this.httpClient.get(`${this.url}/${id}/image`, { responseType: 'blob' });
+  }
+
+  updateMovieImage(id: number, file: File): Observable<void> {
+    const formData = new FormData();
+    formData.append('filmImage', file);
+    return this.httpClient.put<void>(`${this.url}/${id}/image`, formData);
+  }
 }

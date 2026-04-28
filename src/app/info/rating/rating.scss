@@ -1,0 +1,23 @@
+.rating-good,
+.rating-ok,
+.rating-bad {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  i {
+    color: gold;
+  }
+}
+
+.rating-good {
+  color: #4ade80;
+}
+
+.rating-ok {
+  color: #facc15;
+}
+
+.rating-bad {
+  color: #f87171;
+}

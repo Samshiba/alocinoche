@@ -1,0 +1,13 @@
+@if (rating > 4) {
+  <span class="rating-good fs-5 fw-bold">
+    <i class="bi bi-star-fill"></i> {{ rating }}/5 🤩
+  </span>
+} @else if (rating > 2) {
+  <span class="rating-ok fs-5 fw-bold">
+    <i class="bi bi-star-fill"></i> {{ rating }}/5 🙂
+  </span>
+} @else {
+  <span class="rating-bad fs-5 fw-bold">
+    <i class="bi bi-star-fill"></i> {{ rating }}/5 💩
+  </span>
+}

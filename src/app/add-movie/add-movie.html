@@ -1,18 +1,12 @@
 <h4>Ajouter un film</h4>
-
 <div class="form d-flex flex-column w-50">
   <label for="title">Titre</label>
-  <input type="text" id="title" name="title" [(ngModel)]="movie.title"/>
-
+  <input type="text" id="title" name="title" class="form-control" [(ngModel)]="movie.title" />
   <label for="director">Réalisateur</label>
-  <input type="text" id="director" name="director" [(ngModel)]="movie.director"/>
-
+  <input type="text" id="director" name="director" class="form-control" [(ngModel)]="movie.director" />
   <label for="release-date">Date de sortie</label>
-  <input type="date" id="release-date" name="release-date" [(ngModel)]="movie.releaseDate"/>
-
+  <input type="date" id="release-date" name="release-date" class="form-control" [(ngModel)]="movie.releaseDate" />
   <label for="synopsis">Synopsis</label>
-  <textarea id="synopsis" name="synopsis" [(ngModel)]="movie.synopsis"></textarea>
-
-  <button class="btn btn-dark" (click)=addMovie()>Ajouter</button>
+  <textarea id="synopsis" name="synopsis" class="form-control" [(ngModel)]="movie.synopsis"></textarea>
+  <button class="btn btn-primary" (click)="addMovie()">Ajouter</button>
 </div>
-

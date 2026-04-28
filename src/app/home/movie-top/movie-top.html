@@ -1,0 +1,22 @@
+<div class="row mt-5 pt-5">
+  <div class="col-12 text-center mb-5">
+    <h2 class="text-white fw-bold text-uppercase tracking-wider">Top 3 de la Semaine</h2>
+  </div>
+</div>
+
+<div class="podium-container d-flex justify-content-center align-items-end gap-3 gap-md-4">
+  <div class="podium-step step-2">
+    <div class="rank-badge rank-badge-second shadow fw-bold">2ème</div>
+    <app-movie-card [movie]="movies[1]"></app-movie-card>
+  </div>
+
+  <div class="podium-step step-1">
+    <div class="rank-badge rank-badge-first shadow fw-bold">1er</div>
+    <app-movie-card [movie]="movies[0]"></app-movie-card>
+  </div>
+
+  <div class="podium-step step-3">
+    <div class="rank-badge rank-badge-third shadow fw-bold">3ème</div>
+    <app-movie-card [movie]="movies[2]"></app-movie-card>
+  </div>
+</div>

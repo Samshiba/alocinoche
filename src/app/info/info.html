@@ -1,0 +1,40 @@
+<div class="detail-page">
+  @if (movie$ | async; as movie) {
+    <div class="detail-showcase">
+      @if (movie.image) {
+        <div
+          class="hero-bg-blur"
+          [style.backgroundImage]="'url(http://localhost:8080/movies/' + movie.id + '/image)'"
+        ></div>
+      }
+
+      <div class="container hero-content py-5">
+        <app-info-header [movie]="movie"></app-info-header>
+
+        <div class="meta d-flex flex-wrap justify-content-center justify-content-md-start gap-4 mb-4 px-md-4">
+          @if (movie.rate) {
+            <app-info-rating [rating]="movie.rate"></app-info-rating>
+          }
+          @if (movie.releaseDate) {
+            <app-info-date [date]="movie.releaseDate"></app-info-date>
+          }
+          @if (movie.director) {
+            <app-info-director [director]="movie.director"></app-info-director>
+          }
+        </div>
+
+        <p class="lead text-white-50 px-md-4 hero-synopsis">
+          {{ movie.synopsis }}
+        </p>
+      </div>
+
+      <div class="hero-bottom-fade"></div>
+    </div>
+
+    <div class="container py-5">
+      @if (movie.id) {
+        <app-info-comments [movieId]="movie.id"></app-info-comments>
+      }
+    </div>
+  }
+</div>

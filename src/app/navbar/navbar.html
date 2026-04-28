@@ -1,6 +1,9 @@
 <nav class="navbar navbar-light navbar-expand">
   <a class="navbar-brand" routerLink="/">{{ title }}</a>
-  <a class="nav-item nav-link" routerLink="/inscription">Inscription</a>
-  <a class="nav-item nav-link" routerLink="/mon-espace">Mon espace</a>
   <a class="nav-item nav-link" routerLink="/admin">Espace administrateur</a>
+
+  <div class="ms-auto">
+    <a *ngIf="!isLoggedIn" class="nav-item nav-link" routerLink="/inscription">Inscription</a>
+    <a *ngIf="isLoggedIn" class="nav-item nav-link" routerLink="/mon-espace">Mon espace</a>
+  </div>
 </nav>

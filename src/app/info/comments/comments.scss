@@ -1,0 +1,50 @@
+.comments-card {
+  background-color: #fff;
+}
+
+.tracking-wider {
+  letter-spacing: 2px;
+}
+
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.review {
+  padding: 1rem 1.25rem;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.review-header .author {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #212529;
+}
+
+.review-header .date {
+  margin-left: auto;
+}
+
+.review-text {
+  color: #495057;
+  line-height: 1.5;
+}

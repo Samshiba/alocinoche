@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-movie-card',
+  standalone: true,
   imports: [
     DatePipe
   ],

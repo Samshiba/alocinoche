@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "premier-projet": {
+    "takima-ciné": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -83,10 +83,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "premier-projet:build:production"
+              "buildTarget": "takima-ciné:build:production"
             },
             "development": {
-              "buildTarget": "premier-projet:build:development"
+              "buildTarget": "takima-ciné:build:development"
             }
           },
           "defaultConfiguration": "development"

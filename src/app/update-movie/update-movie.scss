@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 h4 {
   padding-top: 1em;
   padding-bottom: 1em;
@@ -17,10 +19,13 @@ label {
   font-family: sans-serif;
   font-size: 0.95em;
   font-weight: bold;
+  margin-top: 1em;
+  display: block;
 }
 
 input {
   margin-bottom: 2em;
+  margin-top: 0.5em;
 }
 
 input.synopsis {
@@ -29,4 +34,30 @@ input.synopsis {
 
 button {
   margin-top: 1em;
+}
+
+.image-preview {
+  margin: 1.5em 0;
+  padding: 1em;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    margin: 0 0 1em 0;
+    font-size: 0.9em;
+    color: $text-dark;
+    font-weight: 500;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 8px;
+    object-fit: contain;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
 }

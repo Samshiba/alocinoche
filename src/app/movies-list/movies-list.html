@@ -1,6 +1,6 @@
 <h4 class="justify-center">Gérer les films affichés</h4>
 <div class="add-container">
-  <button type="button" class="btn btn-dark" routerLink="/add-movie">Nouveau film</button>
+  <button type="button" class="btn btn-dark" routerLink="/admin/add">Nouveau film</button>
 </div>
 <div class="table-responsive">
   <table class="table">
@@ -29,7 +29,7 @@
               <button type="button" class="btn btn-danger deleteButton" (click)="deleteMovie(movie.id!)">
                 <i class="bi bi-trash"></i>
               </button>
-              <button type="button" class="btn btn-primary" [routerLink]="['/update-movie']" [queryParams]="{id: movie.id}">
+              <button type="button" class="btn btn-primary" [routerLink]="['/admin/update']" [queryParams]="{id: movie.id}">
                 <i class="bi bi-pencil-square"></i>
               </button>
             </div>

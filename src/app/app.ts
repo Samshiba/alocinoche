@@ -1,14 +1,14 @@
 import { Component, signal } from '@angular/core';
 import { Navbar } from './navbar/navbar'
-import {Home} from './home/home';
 import {RouterOutlet} from '@angular/router';
+import { Footer } from './footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar, Home, RouterOutlet],
+  imports: [Navbar, Footer, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('premier-projet');
+  protected readonly title = signal('TakimaCiné');
 }

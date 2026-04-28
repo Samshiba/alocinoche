@@ -26,7 +26,7 @@ export class UpdateMovie {
 
   constructor(private toastrService: ToastrService) {
     if (!this.id || isNaN(this.id)) {
-      this.router.navigate(['/movies']);
+      this.router.navigate(['/admin']);
       return;
     }
 
@@ -43,7 +43,7 @@ export class UpdateMovie {
       releaseDate: new Date(this.releaseDate)
     }).subscribe(() => {
       this.toastrService.success('Film modifié');
-      this.router.navigate(['/movies']);
+      this.router.navigate(['/admin']);
     });
   }
 }

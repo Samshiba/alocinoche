@@ -32,10 +32,12 @@ export class AddMovie {
   constructor(private toastrService: ToastrService) {}
 
   addMovie(): void {
-    this.moviesApi.addMovie(this.movie).subscribe(() => {
-      this.toastrService.success('Film ajouté');
-      this.router.navigate(['/movies']);
-    });
+    this.moviesApi.addMovie(this.movie).subscribe(
+      () => {
+        this.toastrService.success('Film ajouté');
+        this.router.navigate(['/admin'])
+      }
+    );
   }
 
 

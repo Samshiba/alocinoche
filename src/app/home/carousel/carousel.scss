@@ -1,0 +1,12 @@
+:host ::ng-deep .p-carousel-items-content {
+  gap: 0 !important;
+}
+
+:host ::ng-deep .p-carousel-item {
+  flex: 0 0 auto !important;
+  padding: 0 4px;
+}
+
+:host ::ng-deep .p-carousel-content {
+  justify-content: flex-start !important;
+}

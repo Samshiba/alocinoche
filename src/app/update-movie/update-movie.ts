@@ -25,7 +25,7 @@ export class UpdateMovie {
 
   constructor() {
     if (!this.id || isNaN(this.id)) {
-      this.router.navigate(['/movies']);
+      this.router.navigate(['/admin']);
       return;
     }
 
@@ -41,7 +41,7 @@ export class UpdateMovie {
       ...this.movie,
       releaseDate: new Date(this.releaseDate)
     }).subscribe(() => {
-      this.router.navigate(['/movies']);
+      this.router.navigate(['/admin']);
     });
   }
 }

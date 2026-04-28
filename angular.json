@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "takima-ciné": {
+    "takima-cine": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -52,7 +52,8 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ]
           },
           "configurations": {
@@ -83,10 +84,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "takima-ciné:build:production"
+              "buildTarget": "takima-cine:build:production"
             },
             "development": {
-              "buildTarget": "takima-ciné:build:development"
+              "buildTarget": "takima-cine:build:development"
             }
           },
           "defaultConfiguration": "development"

@@ -6,7 +6,9 @@ import {UpdateMovie} from './update-movie/update-movie';
 
 export const routes: Routes = [
   { path: '', component: Home},
-  { path: 'movies', component: MoviesList},
-  { path: 'add-movie', component: AddMovie},
-  { path: 'update-movie', component: UpdateMovie}
+  { path: 'inscription', component: Home},
+  { path: 'mon-espace', component: Home},
+  { path: 'admin', component: MoviesList},
+  { path: 'admin/add', component: AddMovie},
+  { path: 'admin/update', component: UpdateMovie}
 ];

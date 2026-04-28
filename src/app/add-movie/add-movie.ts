@@ -28,7 +28,7 @@ export class AddMovie {
 
   addMovie(): void {
     this.moviesApi.addMovie(this.movie).subscribe(
-      () => this.router.navigate(['/movies'])
+      () => this.router.navigate(['/admin'])
     );
   }
 }

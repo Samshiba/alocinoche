@@ -7,6 +7,7 @@ import {MovieCard} from './movie-card/movie-card';
 import {map} from 'rxjs/operators';
 import { MovieBanner } from './movie-banner/movie-banner';
 import { MovieTop } from './movie-top/movie-top';
+import {CarouselComponent} from './carousel/carousel';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,8 @@ import { MovieTop } from './movie-top/movie-top';
     AsyncPipe,
     MovieCard,
     MovieBanner,
-    MovieTop
+    MovieTop,
+    CarouselComponent
   ],
   templateUrl: './home.html',
   styleUrl: './home.scss',

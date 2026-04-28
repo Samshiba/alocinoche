@@ -1,0 +1,78 @@
+@import './variables.scss';
+
+h4 {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-weight: bold;
+  text-align: center;
+  color: $text-dark;
+}
+
+.form {
+  margin: 0 auto 2em auto;
+  padding: 2em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  background-color: #f0f3f5;
+}
+
+label {
+  font-family: sans-serif;
+  font-size: 0.95em;
+  font-weight: bold;
+  color: $text-dark;
+  margin-bottom: 4px;
+}
+
+.form-control {
+  margin-bottom: 1.25em;
+  border: 1px solid darken(#f0f3f5, 15%);
+  border-radius: 4px;
+  transition: $transition;
+  font-size: 0.95em;
+
+  &:focus {
+    border-color: $accent-color;
+    box-shadow: 0 0 0 3px rgba($accent-color, 0.15);
+    outline: none;
+  }
+
+  &.ng-touched.ng-invalid {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 3px rgba(#e74c3c, 0.12);
+  }
+
+  &.ng-touched.ng-valid {
+    border-color: #27ae60;
+    box-shadow: 0 0 0 3px rgba(#27ae60, 0.12);
+  }
+
+  &[type='number'] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+  }
+}
+
+.btn-primary {
+  margin-top: 0.5em;
+  width: 100%;
+  background-color: $accent-color;
+  border-color: $accent-color;
+  font-weight: 600;
+  transition: $transition;
+
+  &:hover:not(:disabled) {
+    background-color: darken($accent-color, 8%);
+    border-color: darken($accent-color, 8%);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

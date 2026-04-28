@@ -1,0 +1,192 @@
+.mon-espace-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+
+  .loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #666;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .profile-section {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 24px;
+    }
+
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #e0e0e0;
+
+      label {
+        font-weight: 600;
+        color: #555;
+      }
+
+      span {
+        color: #333;
+      }
+
+      .points {
+        font-weight: 600;
+        color: #28a745;
+        font-size: 18px;
+      }
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .reviews-section {
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 24px;
+    }
+
+    .no-reviews {
+      text-align: center;
+      padding: 40px 20px;
+      background: #f0f0f0;
+      border-radius: 8px;
+      color: #666;
+
+      p {
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+
+      .btn {
+        display: inline-block;
+      }
+    }
+
+    .reviews-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .review-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      transition: box-shadow 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .review-header {
+        margin-bottom: 15px;
+
+        h4 {
+          margin: 0 0 10px 0;
+          color: #333;
+          font-size: 18px;
+        }
+
+        .review-meta {
+          display: flex;
+          gap: 15px;
+          align-items: center;
+
+          .rating {
+            font-weight: 600;
+            color: #ff9800;
+            font-size: 14px;
+          }
+
+          .date {
+            color: #999;
+            font-size: 12px;
+          }
+        }
+      }
+
+      .review-text {
+        color: #555;
+        line-height: 1.6;
+        margin: 0;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+
+    .btn {
+      padding: 10px 30px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-danger {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+
+      &:hover {
+        background-color: #c82333;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .mon-espace-container {
+    margin: 20px auto;
+
+    .profile-section,
+    .reviews-section {
+      padding: 20px;
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+
+    .profile-section .info-row {
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .reviews-section .review-meta {
+      flex-direction: column;
+      gap: 5px !important;
+    }
+  }
+}

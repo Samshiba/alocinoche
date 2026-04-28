@@ -13,4 +13,8 @@ export class ReviewsApi {
   getReviewsByMovie(movieId: number): Observable<Review[]> {
     return this.httpClient.get<Review[]>(`${this.url}/movies/${movieId}/reviews`);
   }
+
+  getReviewsByUserId(userId: number): Observable<Review[]> {
+    return this.httpClient.get<Review[]>(`${this.url}/users/${userId}/reviews`);
+  }
 }

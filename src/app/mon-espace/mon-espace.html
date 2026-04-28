@@ -1,0 +1,75 @@
+<div class="mon-espace-container">
+  @if (isLoading) {
+    <div class="loading">
+      <p>Chargement...</p>
+    </div>
+  }
+
+  @if (!isLoading && user) {
+    <div class="content">
+      <div class="profile-section">
+        <h2>Mon Profil</h2>
+        <div class="profile-info">
+          <div class="info-row">
+            <label>Prénom:</label>
+            <span>{{ user.firstName }}</span>
+          </div>
+          <div class="info-row">
+            <label>Nom:</label>
+            <span>{{ user.lastName }}</span>
+          </div>
+          <div class="info-row">
+            <label>Âge:</label>
+            <span>{{ user.age }} ans</span>
+          </div>
+          <div class="info-row">
+            <label>Email:</label>
+            <span>{{ user.email }}</span>
+          </div>
+          @if (user.points !== undefined) {
+            <div class="info-row">
+              <label>Points fidélité:</label>
+              <span class="points">{{ user.points }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="reviews-section">
+        <h2>Mes Avis ({{ reviews.length }})</h2>
+
+        @if (reviews.length === 0) {
+          <div class="no-reviews">
+            <p>Vous n'avez pas encore donné d'avis.</p>
+            <a routerLink="/" class="btn btn-primary">Découvrir les films</a>
+          </div>
+        }
+
+        @if (reviews.length > 0) {
+          <div class="reviews-list">
+            @for (review of reviews; track review.id) {
+              <div class="review-card">
+                <div class="review-header">
+                  <h4>{{ review.movie.title }}</h4>
+                  <div class="review-meta">
+                    <span class="rating">{{ review.rate }}/5 ⭐</span>
+                    @if (review.reviewDate) {
+                      <span class="date">
+                        {{ review.reviewDate | date: 'short' }}
+                      </span>
+                    }
+                  </div>
+                </div>
+                <p class="review-text">{{ review.text }}</p>
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="actions">
+        <button (click)="logout()" class="btn btn-danger">Se déconnecter</button>
+      </div>
+    </div>
+  }
+</div>

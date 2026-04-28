@@ -1,24 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { Input } from '@angular/core';
-import {CommonModule, TitleCasePipe} from '@angular/common';
+import { Component, inject, Input } from '@angular/core';
 import {RouterLink} from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
-  imports: [
-    CommonModule,
-    TitleCasePipe,
-    RouterLink
-  ],
+  imports: [RouterLink],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
-export class Navbar implements OnInit {
+export class Navbar {
   @Input({ required: true }) title! : string
 
-  isLoggedIn = false;
+  private readonly authService = inject(AuthService);
 
-  ngOnInit(): void {
-    this.isLoggedIn = !!localStorage.getItem('userId');
-  }
+  isLoggedIn$ = this.authService.isLoggedIn$;
 }
